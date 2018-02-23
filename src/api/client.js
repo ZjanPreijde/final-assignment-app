@@ -4,7 +4,7 @@ import request from 'superagent'
 
 export default class ApiClient {
   defaultOptions = {
-    tokenStorageKey: 'gameApiJWT'
+    tokenStorageKey: 'evaluationsApiJWT'
   }
 
   constructor(host, options = {}) {
