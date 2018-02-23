@@ -26,7 +26,7 @@ export default ({ email, password}) => {
 
         api.storeToken(jwt)
 
-        // Redirect programatically to the Lobby
+        // Redirect programatically to the School Hall
         dispatch(replace('/'))
 
         dispatch(websocket.connect())

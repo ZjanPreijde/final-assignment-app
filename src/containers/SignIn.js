@@ -6,6 +6,7 @@ import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from 'material-ui/FlatButton'
+
 import signIn from '../actions/user/sign-in'
 import Title from '../components/UI/Title'
 
@@ -29,7 +30,7 @@ export class SignIn extends PureComponent {
 
   componentWillMount() {
     const { replace, signedIn } = this.props
-    if (signedIn) replace('/')
+    if (signedIn) replace('/batches')
   }
 
   submitForm(event) {
@@ -41,9 +42,12 @@ export class SignIn extends PureComponent {
     this.props.signIn(user)
   }
 
-  signUp() {
-    this.props.push('/sign-up')
-  }
+  // signUp() {
+  //   this.props.push('/sign-up')
+  // }
+  // <FlatButton
+  //   onClick={ this.signUp.bind(this) }
+  //   label="Sign up" />
 
   render() {
     return (
@@ -58,14 +62,12 @@ export class SignIn extends PureComponent {
             <TextField ref="password" type="password" hintText="Password"  />
           </div>
         </form>
-        <FlatButton
-          onClick={ this.signUp.bind(this) }
-          label="Sign up" />
         <RaisedButton
-          style={ buttonStyle }
-          onClick={ this.submitForm.bind(this) }
+          style={buttonStyle}
+          onClick={this.submitForm.bind(this)}
           label="Sign in"
-          primary={true} />
+          primary={true}
+        />
       </Paper>
     )
   }
